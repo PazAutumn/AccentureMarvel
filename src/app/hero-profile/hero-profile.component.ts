@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Heroe } from '../classes/heroe';
 import { HeroesService } from '../heroes.service';
 import { Location } from '@angular/common';
+
+import { ModalPollComponent } from '../modal-poll/modal-poll.component';
 
 
 @Component({
@@ -10,9 +12,11 @@ import { Location } from '@angular/common';
   templateUrl: './hero-profile.component.html',
   styleUrls: ['./hero-profile.component.css']
 })
+
 export class HeroProfileComponent implements OnInit {
   private id;
   public heroe: Heroe;
+  public question_modal: string;
 
   constructor(private route: ActivatedRoute, private heroesService: HeroesService, private _location: Location) { }
 
@@ -26,7 +30,15 @@ export class HeroProfileComponent implements OnInit {
       });
     });
   }
+
   goBack() {
     this._location.back();
   }
+
+  launchModal():void{
+    this.question_modal="¿En cual grupo quieres colocar a tu súper héroe?";
+    this.modal.toggle_modal();
+  }
+
+  @ViewChild('modal') modal;
 }

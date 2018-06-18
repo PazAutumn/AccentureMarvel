@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListadoDeHeroesComponent } from './listado-de-heroes/listado-de-heroes.component';
 import { HeroProfileComponent } from './hero-profile/hero-profile.component';
+import { ModalPollComponent } from './modal-poll/modal-poll.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoDeHeroesComponent,
-    HeroProfileComponent
+    HeroProfileComponent,
+    ModalPollComponent
   ],
   imports: [
     BrowserModule,

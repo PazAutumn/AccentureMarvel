@@ -1,3 +1,4 @@
+<accen-modal-poll [title_modal]="question_modal" #modal></accen-modal-poll>
 <ng-container *ngIf="heroe">
   <h1 class="text-center">{{heroe.name}}</h1>
   <a class="goback" (click)="goBack()">Atrás</a>
@@ -14,3 +15,4 @@
     </div>
   </div>
 </ng-container>
+<p><button type="button" class="btn btn-primary" (click)="launchModal()">Clasificar</button></p>
