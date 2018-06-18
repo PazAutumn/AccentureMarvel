@@ -38,7 +38,7 @@ export class HeroesService {
             result.modified,
             result.thumbnail,
             result.resourceURI,
-            ''
+            this.getTeamColor(result.id)
           ));
         }
       );
@@ -48,4 +48,23 @@ export class HeroesService {
     const url = this.protocol + this.ApiUrl + 'characters/' + id + '?apikey=56d2cc44b1c84eb7c6c9673565a9eb4b';
     return this.http.get<any>(url);
   }
+
+  public group_colors = {
+    "azul" : "#1f8ff7",
+    "violeta":"#a43de3",
+    "naranjo":"#df5c0f",
+    "verde":"#0ea521"
+  }
+
+  public teams = new Map();
+
+  getTeamColor(id):string{
+    if(this.teams.get(id)!=undefined){
+      return this.teams.get(id);
+    }
+    else{
+      return "";
+    }
+  }
+
 }
