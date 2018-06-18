@@ -1,0 +1,10 @@
+<h1 class="text-center">{{title}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3" *ngIf="heroes.length > 0">
+      <a class="hero-entry" [style.background-image]="'url(' + heroes[0].thumbnail.path + '.' + heroes[0].thumbnail.extension + ')'">
+        <span>{{heroes[0].name}}</span>
+      </a>
+    </div>
+  </div>
+</div>
