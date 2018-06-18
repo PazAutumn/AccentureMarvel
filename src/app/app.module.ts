@@ -7,11 +7,13 @@ import { HeroesService } from './heroes.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListadoDeHeroesComponent } from './listado-de-heroes/listado-de-heroes.component';
+import { HeroProfileComponent } from './hero-profile/hero-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoDeHeroesComponent
+    ListadoDeHeroesComponent,
+    HeroProfileComponent
   ],
   imports: [
     BrowserModule,
