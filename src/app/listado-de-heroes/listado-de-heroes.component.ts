@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Heroe } from '../classes/heroe';
+import { HeroesService } from '../heroes.service';
 
 @Component({
   selector: 'accen-listado-de-heroes',
@@ -9,11 +10,11 @@ import { Heroe } from '../classes/heroe';
 export class ListadoDeHeroesComponent implements OnInit {
 
   public title = 'Tutorial de Angular - Héroes de Marvel';
-  public heroes: Array<Heroe> = [];
 
-  constructor() { }
+  constructor(private heroesService: HeroesService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.heroesService.getHeroes();
+    }
 
 }
